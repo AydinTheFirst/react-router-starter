@@ -1,40 +1,19 @@
-import { Button, Dropdown, Label } from "@heroui/react";
+import { Button } from "@heroui/react";
 import { Icon } from "@iconify/react";
 import { useTheme } from "next-themes";
 
 export default function ThemeSwitcher() {
-	const { setTheme, themes } = useTheme();
+	const { setTheme, theme } = useTheme();
+
+	const toggleTheme = () => {
+		setTheme(theme === "light" ? "dark" : "light");
+	};
 
 	return (
-		<Dropdown>
-			<Button aria-label="Theme Switcher" isIconOnly variant="secondary">
-				<Icon className="size-5" icon="mdi:theme-light-dark" />
-			</Button>
-			<Dropdown.Popover>
-				<Dropdown.Menu onAction={(key) => setTheme(key.toString())}>
-					{themes.map((t) => (
-						<Dropdown.Item key={t}>
-							<Label>{getThemeLabel(t)}</Label>
-							<Icon className="size-5 ms-auto" icon={getThemeIcon(t)} />
-						</Dropdown.Item>
-					))}
-				</Dropdown.Menu>
-			</Dropdown.Popover>
-		</Dropdown>
+		<Button isIconOnly onClick={toggleTheme} variant="tertiary">
+			<Icon icon={getThemeIcon(theme || "system")} />
+		</Button>
 	);
-}
-
-function getThemeLabel(theme: string) {
-	switch (theme) {
-		case "light":
-			return "Light";
-		case "dark":
-			return "Dark";
-		case "system":
-			return "System";
-		default:
-			return "Unknown";
-	}
 }
 
 function getThemeIcon(theme: string) {
