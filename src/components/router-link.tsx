@@ -1,6 +1,6 @@
-import { linkVariants } from "@heroui/react";
+import { cn } from "@heroui/react";
 import { Link, type LinkProps } from "react-router";
 
-export default function RouterLink(props: LinkProps) {
-	return <Link className={linkVariants({}).base()} {...props} />;
+export default function RouterLink({ className, ...props }: LinkProps) {
+	return <Link className={cn("link", className)} {...props} />;
 }

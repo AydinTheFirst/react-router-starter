@@ -1,0 +1,45 @@
+/* Root */
+.navbar {
+	@apply w-full border-b bg-background/50 backdrop-blur sticky top-0 z-40;
+}
+
+/* Content wrapper */
+.navbar__content {
+	@apply max-w-7xl mx-auto px-4 h-16 flex items-center justify-between;
+}
+
+/* Desktop links */
+.navbar__item {
+	@apply hidden md:inline-block text-foreground hover:opacity-80 transition-opacity;
+}
+
+/* Mobile toggle */
+.navbar__toggle {
+	@apply md:hidden p-2 rounded focus:outline-none focus:ring-accent-hover;
+}
+
+.navbar__toggle-icon {
+	@apply w-6 h-6 text-foreground;
+}
+
+/* ---------------------------------------------- */
+/* Mobile dropdown menu (closed) */
+/* ---------------------------------------------- */
+
+.navbar__menu {
+	@apply md:hidden overflow-hidden max-h-0 transition-all duration-300 bg-background border-b absolute top-16 left-0 w-full;
+}
+
+/* Open state */
+.navbar__menu--open {
+	@apply max-h-[500px]; /* Expandable area */
+}
+
+/* Menu items */
+.navbar__menu-item {
+	@apply block px-4 py-3 border-b text-foreground transition-colors;
+}
+
+.navbar__list {
+	@apply flex justify-center items-center gap-4;
+}

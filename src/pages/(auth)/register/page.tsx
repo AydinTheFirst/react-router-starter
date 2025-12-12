@@ -35,10 +35,10 @@ export default function RegisterPage() {
 	};
 
 	return (
-		<div className="grid place-items-center h-screen container">
+		<div className="container grid h-screen place-items-center">
 			<Card.Root className="w-full max-w-md p-10">
 				<Card.Header>
-					<Card.Title className="text-3xl font-semibold mb-4">
+					<Card.Title className="mb-4 font-semibold text-3xl">
 						Create an account
 					</Card.Title>
 					<Card.Description>
@@ -69,28 +69,28 @@ export default function RegisterPage() {
 							</Checkbox>
 							<Label htmlFor="basic-terms">
 								I agree to the
-								<RouterLink className="underline mx-1" to="/terms">
+								<RouterLink className="mx-1 underline" to="/terms">
 									Terms
 								</RouterLink>
 								and
-								<RouterLink className="underline mx-1" to="/privacy">
+								<RouterLink className="mx-1 underline" to="/privacy">
 									Privacy Policy
 								</RouterLink>
 							</Label>
 						</div>
 
-						<Button className="w-full mt-4" type="submit">
+						<Button className="mt-4 w-full" type="submit">
 							Register
 						</Button>
 					</Form>
 				</Card.Content>
 
-				<div className="grid grid-cols-3 place-items-center gap-3 ">
+				<div className="grid grid-cols-3 place-items-center gap-3">
 					<Separator />
-					<span className="text-sm text-muted">Or continue with</span>
+					<span className="text-muted text-sm">Or continue with</span>
 					<Separator />
 				</div>
-				<Card.Footer className="flex gap-3 items-center justify-center">
+				<Card.Footer className="flex items-center justify-center gap-3">
 					<Button variant="tertiary">
 						<Icon className="size-5" icon="mdi:google" />
 						Sign up with Google

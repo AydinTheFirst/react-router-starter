@@ -4,8 +4,8 @@ import ThemeSwitcher from "~/components/theme-switcher";
 export default function HelloWorld() {
 	return (
 		<div>
-			<Button>HelloWorld</Button>
-			<div className="h-screen grid place-items-center">
+			<Button variant="primary">HelloWorld</Button>
+			<div className="grid h-screen place-items-center">
 				<ThemeSwitcher />
 			</div>
 		</div>
